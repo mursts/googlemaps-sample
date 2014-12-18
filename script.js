@@ -16,7 +16,6 @@ function initialize(markers) {
     for(var i in markers) {
         var m = markers[i];
         var latlng = new google.maps.LatLng(m.y, m.x);
-        console.log(m.x);
         var obj =  {
             position: latlng,
             map: map,
@@ -40,7 +39,7 @@ function initialize(markers) {
 
 function infoBox(map, marker, data) {
     var infoWindow = new google.maps.InfoWindow({
-        content: data.content,
+        content: data.name,
         size: new google.maps.Size(500, 500),
     });
     google.maps.event.addListener(marker, "click", function(e) {
